@@ -1,0 +1,273 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff99cc, #ffc0cb);
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background Sparkles */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.sparkle {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: sparkle 3s infinite ease-in-out;
+}
+
+.sparkle:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.sparkle:nth-child(2) {
+    top: 50%;
+    left: 60%;
+}
+
+.sparkle:nth-child(3) {
+    top: 80%;
+    left: 30%;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Photo Frame */
+.photo-frame {
+    margin: 20px auto;
+    width: 800px;
+    height: 800px;
+    border: 5px solid #fff;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    animation: float 5s infinite ease-in-out;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cake Styling */
+.cake-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cake {
+    width: 180px;
+    height: 220px;
+    background: #ff69b4;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.layer {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.layer1 {
+    background: #ff9999;
+}
+
+.layer2 {
+    background: #ffd1dc;
+}
+
+.layer3 {
+    background: #ffa07a;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    width: 100%;
+}
+
+.candle {
+    width: 10px;
+    height: 30px;
+    background: red;
+    border-radius: 2px;
+    margin: 0 5px;
+}
+
+.candle::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: orange;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Balloons */
+.balloons {
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.balloon {
+    width: 60px;
+    height: 80px;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+    animation: float 4s infinite;
+}
+
+.balloon::after {
+    content: '';
+    width: 2px;
+    height: 100px;
+    background: #000;
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
+
+.pink {
+    background: rgb(255, 60, 92);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Floating Hearts */
+.hearts {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background: rgb(238, 39, 72);
+    position: absolute;
+    animation: heart-float 3s infinite;
+}
+
+@keyframes heart-float {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.play-music-btn {
+    background: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.play-music-btn:hover {
+    background: #ff1493;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
